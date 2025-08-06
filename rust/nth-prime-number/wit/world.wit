@@ -1,0 +1,9 @@
+package betty-blocks:nth-prime-number;
+
+interface nth-prime-number {
+  calculate: func(n: u16) -> result<u64, string>;
+}
+
+world main {
+  export nth-prime-number;
+}

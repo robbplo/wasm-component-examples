@@ -1,0 +1,9 @@
+package betty-blocks:concat-text;
+
+interface concat-text {
+  concat: func(a: string, b: string) -> string;
+}
+
+world main {
+  export concat-text;
+}
