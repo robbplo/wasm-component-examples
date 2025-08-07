@@ -1,0 +1,7 @@
+# generated files
+/gen
+/wit/deps
+
+# build artifacts
+*.wasm
+wkg.lock
