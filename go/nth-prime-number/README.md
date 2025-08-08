@@ -1,6 +1,6 @@
-# Http request
+# Nth prime number
 
-Http component that calls the typicode api. The actual sending of the request is done via the wasi:http/outgoing-handler interface.
+wasm component calculates the nth prime number.
 
 ## prerequirements
 * Install `tinygo` [install tinygo](https://tinygo.org/getting-started/install/)

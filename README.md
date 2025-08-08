@@ -13,6 +13,11 @@ Currently this repo contains creating wasm component using the following languag
   - component to calculate the [nth prime number](./rust/nth-prime-number/)
   - component that does a [http call to jsonplaceholder](./rust/http-request/)
 
+- Golang
+  - component to combine two string into one string, called [concat-text](./go/concat-text) 
+  - component to calculate the [nth prime number](./go/nth-prime-number/)
+  - component that does a [http call to jsonplaceholder](./go/http-request/)
+
 For more examples with other programming languages take a look at the following repos:
 
 - [wasmcloud main repo](https://github.com/wasmCloud/wasmCloud/tree/main/examples)
@@ -25,12 +30,28 @@ For more examples with other programming languages take a look at the following 
 
 ## Installation
 
-This project uses [just](https://github.com/casey/just), [wkg](https://github.com/bytecodealliance/wasm-pkg-tools) and rust with [cargo](https://www.rust-lang.org/tools/install) with the target wasm32-wasip2
+### General tools
+This project uses [just](https://github.com/casey/just), [wkg](https://github.com/bytecodealliance/wasm-pkg-tools)
+
+### Language specific
+- Rust:
+  - rust with [cargo](https://www.rust-lang.org/tools/install) with the target wasm32-wasip2
+- Golang
+  - golang [install golang](https://go.dev/doc/install)
+  - tinygo [install tinygo](https://tinygo.org/getting-started/install/)
 
 ## Building
 
+### Rust
 To build the rust components run:
 
 ```sh
 just build-rust
+```
+
+### Golang
+To build the golang components run:
+
+```sh
+just build-go
 ```

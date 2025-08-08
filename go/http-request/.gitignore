@@ -3,5 +3,4 @@
 /wit/deps
 
 # build artifacts
-*.wasm
 wkg.lock
