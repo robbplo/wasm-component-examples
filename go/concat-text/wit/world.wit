@@ -1,0 +1,11 @@
+package betty-blocks:concat-text;
+
+interface concat-text {
+  concat: func(a: string, b: string) -> string;
+}
+
+world main {
+  include wasi:cli/imports@0.2.0;
+  
+  export concat-text;
+}

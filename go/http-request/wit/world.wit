@@ -1,0 +1,13 @@
+package betty-blocks:http-request;
+
+interface http {
+  run: func(endpoint: string) -> result<string, string>;
+}
+
+world main {
+  include wasi:cli/imports@0.2.0;
+
+  import wasi:http/outgoing-handler@0.2.6;
+
+  export http;
+}

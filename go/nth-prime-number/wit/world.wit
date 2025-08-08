@@ -1,0 +1,11 @@
+package betty-blocks:nth-prime-number;
+
+interface nth-prime-number {
+  calculate: func(n: u16) -> result<u64, string>;
+}
+
+world main {
+  include wasi:cli/imports@0.2.0;
+
+  export nth-prime-number;
+}
