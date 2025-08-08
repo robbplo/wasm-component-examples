@@ -1,5 +1,7 @@
 package wasihttp
 
+// Copied from https://github.com/wasmCloud/go/blob/main/component/net/wasihttp/streams.go
+
 import (
 	"errors"
 	"fmt"
