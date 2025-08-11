@@ -5,7 +5,7 @@ Http component that calls the typicode api. The actual sending of the request is
 ## prerequirements
 * Install `tinygo` [install tinygo](https://tinygo.org/getting-started/install/)
 * Install `golang` version 1.24 or greater
-* Requires the `wkg` tool
+* Requires the `wkg` and `wasm-tools` packages
 * Run `go mod download` to download the dependencies
 
 ## Building

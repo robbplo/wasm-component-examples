@@ -7,7 +7,7 @@ import (
 func TestNthPrimeNumber(t *testing.T) {
 	testCases := []struct {
 		input    uint16
-		expected uint64
+		expected uint32
 		err      string
 	}{
 		{1, 2, ""},

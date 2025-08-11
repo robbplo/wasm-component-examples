@@ -10,32 +10,32 @@ func init() {
 	nthprimenumber.Exports.Calculate = Calculate
 }
 
-func Calculate(number uint16) cm.Result[string, uint64, string] {
+func Calculate(number uint16) cm.Result[string, uint32, string] {
 	if number == 0 {
-		return cm.Err[cm.Result[string, uint64, string]]("Number must be greater than 0")
+		return cm.Err[cm.Result[string, uint32, string]]("Number must be greater than 0")
 	}
 
 	if number == 1 {
-		return cm.OK[cm.Result[string, uint64, string]](uint64(2))
+		return cm.OK[cm.Result[string, uint32, string]](uint32(2))
 	}
 
-	primes := []uint64{2}
-	for i := uint64(3); uint64(len(primes)) < uint64(number); i += 2 {
+	primes := []uint32{2}
+	for i := uint32(3); uint32(len(primes)) < uint32(number); i += 2 {
 		if isPrime(i) {
 			primes = append(primes, i)
 		}
 	}
 	if len(primes) < int(number) {
-		return cm.Err[cm.Result[string, uint64, string]]("Not enough prime numbers found")
+		return cm.Err[cm.Result[string, uint32, string]]("Not enough prime numbers found")
 	}
-	return cm.OK[cm.Result[string, uint64, string]](primes[int(number)-1])
+	return cm.OK[cm.Result[string, uint32, string]](primes[int(number)-1])
 }
 
-func isPrime(n uint64) bool {
+func isPrime(n uint32) bool {
 	if n <= 1 {
 		return false
 	}
-	for i := uint64(2); i*i <= n; i++ {
+	for i := uint32(2); i*i <= n; i++ {
 		if n%i == 0 {
 			return false
 		}

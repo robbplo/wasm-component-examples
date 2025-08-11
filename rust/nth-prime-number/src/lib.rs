@@ -5,7 +5,7 @@ wit_bindgen::generate!({ generate_all });
 struct PrimeCalulator;
 
 impl nth_prime_number::Guest for PrimeCalulator {
-    fn calculate(n: u16) -> Result<u64, String> {
+    fn calculate(n: u16) -> Result<u32, String> {
         if n == 0 {
             return Err("Nth prime number must be greater than 0".to_string());
         }
@@ -31,7 +31,7 @@ impl nth_prime_number::Guest for PrimeCalulator {
     }
 }
 
-fn is_prime(n: u64, primes: &[u64]) -> bool {
+fn is_prime(n: u32, primes: &[u32]) -> bool {
     if n <= 1 {
         return false;
     }

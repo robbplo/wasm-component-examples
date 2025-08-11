@@ -22,11 +22,17 @@ jobs:
         with:
           targets: wasm32-wasip2
 
+      - name: Install TinyGo
+        uses: tinygo-org/setup-tinygo@v1
+        with:
+          version: stable
+
       - uses: taiki-e/install-action@v2
         with:
-          tool: just,wkg
+          tool: just,wkg,wasm-tools
 
       - run: just build-rust
+      - run: just build-go
 
       - name: Create GitHub Release and Upload WASM Asset
         uses: softprops/action-gh-release@v1
@@ -34,9 +40,7 @@ jobs:
           # This command will automatically create a release using the tag name
           # that triggered the workflow. It will then upload the files listed below.
           files: |
-            concat_text.wasm
-            http_request.wasm
-            nth_prime_number.wasm
+            dist/*.wasm
         env:
           # The GITHUB_TOKEN is a secret automatically provided by GitHub Actions
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
